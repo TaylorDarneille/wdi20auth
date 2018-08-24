@@ -24,20 +24,21 @@ router.get('/signup', function(req, res){
 	res.render('auth/signup');
 });
 
-router.post('/signup', function(req, res){
+router.post('/signup', function(req, res, next){
 	req.body.admin = false;
 	db.user.findOrCreate({
 		where: {email: req.body.email},
 		defaults: req.body
 	}).spread(function(user, wasCreated){
 		if(wasCreated) {
+			console.log("wasCreated!");
 			// Automatically log the user in!
 			passport.authenticate('local', {
 				successRedirect: '/profile',
 				successFlash: 'Successfully logged in!',
-				failureRedirect: '/auth/login',
+				failureRedirect: '/',
 				failureFlash: 'Signup failed!'
-			})(req, res);
+			})(req, res, next);
 		} else {
 			// TODO: Send the user some sort of error message
 			req.flash('error', 'Please login');
