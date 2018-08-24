@@ -2,7 +2,15 @@
 
 This is a simple node/express app has authentication set up and is intended for use as a boilerplate for future projects that require authentication.
 
-## Routes
+## Technologies Used
+* Sequelize models and migration for user model
+* Settings for Postgresql
+* Passport and Passport-Local for authentication
+* Express sessions to keep user logged in
+* Connect-Flash for error/success messages
+* Bcrypt for hassing passwords
+
+## Routes Included
 | Method | Path | Purpose |
 | ------ | ------------ | -------------------------------------------------------- |
 | GET | / | home page 
@@ -13,5 +21,15 @@ This is a simple node/express app has authentication set up and is intended for 
 | GET | /logout | log out the current user and redirect to home page |
 | GET | /profile | check if user is logged in and render profile page, otherwise redirect to login page |
 
-TODO: add table structure and how to set up your own postrgres database
-TODO: add technologies used
+## User Model
+| Column Name | Type | Notes |
+| ----------- | ---- | ------------- |
+| id | Integer | serial primary key |
+| createdAt | Date | auto-generated from sequelize |
+| updatedAt | Date | auto-generated from sequelize |
+| firstname | String | - |
+| lasname | String | - |
+| email | String | used for login |
+| password | String | hashed w/ bcrypt |
+| dob | Date | - |
+| admin | Boolean | defaults to false for regular users |
