@@ -57,7 +57,7 @@ This is a simple node/express app has authentication set up and is intended for 
 * If not using postgres, change the dialect accordingly (**Note:** If you're using a different database, you'll need to install the appropriate node modules to support and uninstall pg and pg/hstore.)
 
 #### 6. Change models and migrations if necessary
-For example, if you don't need the ```admin``` column, you will want to delete it from both the migration and model for the user. Likewise, if you need to add something, add in both files.
+For example, if you don't need the ```admin``` column, you will want to delete it from both the migration and model for the user. Likewise, if you need to add something, add in both files. Make sure to modify the sign up form to fit your needs if you modify the user model.
 
 #### 7. Run the migrations to set up the tables in your database
 ```sequelize db:migrate```
