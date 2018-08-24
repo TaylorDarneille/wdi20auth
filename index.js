@@ -1,5 +1,5 @@
 //Require environment variabls
-require('dotenv');
+require('dotenv').config();
 
 // Require needed modules
 var bodyParser = require('body-parser');
@@ -8,8 +8,6 @@ var express = require('express');
 var flash = require('connect-flash');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
-
-console.log(process.env.SESSION_SECRET);
 
 // Declare app variable
 var app = express();

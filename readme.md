@@ -13,3 +13,5 @@ This is a simple node/express app has authentication set up and is intended for 
 | GET | /logout | log out the current user and redirect to home page |
 | GET | /profile | check if user is logged in and render profile page, otherwise redirect to login page |
 
+TODO: add table structure and how to set up your own postrgres database
+TODO: add technologies used
