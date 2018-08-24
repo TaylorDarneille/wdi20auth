@@ -33,3 +33,11 @@ This is a simple node/express app has authentication set up and is intended for 
 | password | String | hashed w/ bcrypt |
 | dob | Date | - |
 | admin | Boolean | defaults to false for regular users |
+
+## How to Use:
+
+#### 1. Clone repo under a new name.
+``` git clone <repo_link_here> <new_custom_project_name> ```
+
+#### 2. Install node modules from ```package.json```
+```npm install ```
